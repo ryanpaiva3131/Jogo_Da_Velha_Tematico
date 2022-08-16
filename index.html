@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+
+        <title> Atividade 1 - JavaScript </title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="style.css"/>
+
+    </head>
+
+    <body>
+        <div class="ajuste">
+            <input type="checkbox" class="checkbox" id="chk" value="1"/>
+            <label class="label" for="chk">
+            <div class="ball" onclick="mudarcor()"></div>
+            </label>
+        </div>
+
+        <div id="menu">
+
+            <div class="divform">
+                <label>Jogar Contra Computador</label><br/><br/>
+                <label class="labelform" onclick="playagain()"><input type="radio" id="cpu" name="cpu" value="true" checked>SIM</label>
+                <label class="labelform" onclick="playagain()"><input type="radio" id="cpu" name="cpu" value="false" >NÃO</label>
+            </div>
+
+            <div class="temas">
+
+                <label> Escolha o tema </label><br/>
+                <label class="labelradio"><input type="radio" id="1" name="tema" value="1" onclick="mudartema(this.id)"/><img src="./img/tradicional.PNG"/><p>Tradicional</p></label>
+                <label class="labelradio"><input type="radio" id="2" name="tema" value="2" onclick="mudartema(this.id)"/><img src="./img/batmanvscoringa.PNG"/><p>Batman Vs Coringa</p></label>
+                <label class="labelradio"><input type="radio" id="3" name="tema" value="3" onclick="mudartema(this.id)"/><img src="./img/batmanvssuperman.PNG"/><p>Batman Vs Superman</p></label>
+
+            </div>
+
+            <div id="botao">
+                <a class="botao" href="#" onclick="mudarmenu()">
+                    <span class="primeiro"></span>
+                    <span class="segundo"></span>
+                    <span class="terceiro"></span>
+                    <span class="quarto"></span>
+                    Começar
+                  </a>
+            </div>
+
+        </div>
+
+        <div id="principal">
+
+            <div class="jogo">
+        <table class="tabela">
+            <tr>
+                <td id="t1">
+                    <img src="./img/transp.png" alt="imagem" id="c1" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t2">
+                    <img src="./img/transp.png" alt="imagem" id="c2" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t3">
+                    <img src="./img/transp.png" alt="imagem" id="c3" onclick="return checkjogo(this.id)"/>
+                </td>
+            </tr>
+            <tr>
+                <td id="t4">
+                    <img src="./img/transp.png" alt="imagem" id="c4" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t5">
+                    <img src="./img/transp.png" alt="imagem" id="c5" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t6">
+                    <img src="./img/transp.png" alt="imagem" id="c6" onclick="return checkjogo(this.id)"/>
+                </td>
+            </tr>
+            <tr>
+                <td id="t7">
+                    <img src="./img/transp.png" alt="imagem" id="c7" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t8">
+                    <img src="./img/transp.png" alt="imagem" id="c8" onclick="return checkjogo(this.id)"/>
+                </td>
+                <td id="t9">
+                    <img src="./img/transp.png" alt="imagem" id="c9" onclick="return checkjogo(this.id)"/>
+                </td>
+            </tr>
+        </table>
+
+        <div class="placar">
+            <img id="imgcontadorX"/><p id="contadorX">0</p>
+            <img id="imgcontadorO"/><p id="contadorO">0</p>
+            <img id="imgcontadorV"/><p id="contadorV">0</p>
+        </div>
+        </div>
+        <br/>
+
+        </div>
+        </div>
+        
+        <div id="result1X">
+            <h3 align="center">Fim de jogo!!! <br/> X venceu!!!
+            </h3>
+        </div>
+        
+        <div id="result1O">
+            <h3 align="center">Fim de jogo!!! <br/> O venceu!!!
+            </h3>
+        </div>
+        
+        <div id="result1V">
+            <h3 align="center">Fim de jogo!!! <br/> Deu Velha!!!
+            </h3>
+        </div>
+        
+        <div id="result2X">
+            <img src="./img/batmanwin.gif" class="gifresult2X"/>
+            <h3 align="center">Batman Venceu!!! <br/> "Morcegos me assustam. Está na hora de meus inimigos compartilharem desse terror!!!"
+            </h3>
+        </div>
+        
+        <div id="result2O">
+            <img src="./img/coringawin.gif" class="gifresult2O"/>
+            <h3 align="center">Coringa Venceu!!! <br/> "Por que está tão sério?"
+            </h3>
+        </div>
+        
+        <div id="result2V">
+            <img src="./img/velha2.gif" class="gifresult2V"/>
+            <h3 align="center">Empate!!! <br/> A Rivalidade Continua!!!
+            </h3>
+        </div>
+
+        <div id="result3X">
+            <img src="./img/batmanwin3.gif" class="gifresult3X"/>
+            <h3 align="center">Batman Venceu!!! <br/> "Você Sangra? Vai Sangrar!!"
+            </h3>
+        </div>
+        
+        <div id="result3O">
+            <img src="./img/supermanwin.gif" class="gifresult3O"/>
+            <h3 align="center">Superman Venceu!!! <br/> "A sensação de impotência é que transforma homens bons em cruéis."
+            </h3>
+        </div>
+        
+        <div id="result3V">
+            <img src="./img/velha3.gif" class="gifresult3V"/>
+            <h3 align="center">Empate!!! <br/> "Qual justiça será a correta?"
+            </h3>
+        </div>
+        
+        <div id="playa" onclick="mudarmenu3()">
+        <div id="botao">
+            <a class="botao" href="#">
+                <span class="primeiro"></span>
+                <span class="segundo"></span>
+                <span class="terceiro"></span>
+                <span class="quarto"></span>
+                Jogar De Novo
+              </a>
+        </div>
+        </div>
+        <div id="res">
+        <div id="botao">
+            <a class="botao" href="#" onclick="mudarmenu4()">
+                <span class="primeiro"></span>
+                <span class="segundo"></span>
+                <span class="terceiro"></span>
+                <span class="quarto"></span>
+                Menu Principal
+              </a>
+        </div>
+        </div>
+
+    </body>
+
+    <script type="text/javascript" src="externo.js"></script>
+
+</html>
